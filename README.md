@@ -1,12 +1,12 @@
-# DataForSEO MCP Server
+# DataForSEO MCP Server - Lean Labs
 
-Model Context Protocol (MCP) server implementation for DataForSEO, enabling AI assistants to interact with selected DataForSEO APIs and obtain SEO data through a standardized interface. 
+Model Context Protocol (MCP) server implementation for DataForSEO, enabling AI assistants to interact with selected DataForSEO APIs and obtain SEO data through a standardized interface.
 
 ## Features
 
 - **SERP API**: real-time Search Engine Results Page (SERP) data for Google, Bing, and Yahoo;
-- **KEYWORDS_DATA API**: keyword research and clickstream data, including search volume, cost-per-click, and other metrics;   
-- **ONPAGE API**: allows crawling websites and webpages according to customizable parameters to obtain on-page SEO performance metrics; 
+- **KEYWORDS_DATA API**: keyword research and clickstream data, including search volume, cost-per-click, and other metrics;
+- **ONPAGE API**: allows crawling websites and webpages according to customizable parameters to obtain on-page SEO performance metrics;
 - **DATAFORSEO LABS API**: data on keywords, SERPs, and domains based on DataForSEO's in-house databases and proprietary algorithms;
 - **BACKLINKS API**: comprehensive backlink analysis including referring domains, anchor text distribution, and link quality metrics;
 - **BUSINESS DATA API**: publicly available data on any business entity;
@@ -136,7 +136,7 @@ The DataForSEO MCP Server can be deployed as a Cloudflare Worker for serverless,
    ```bash
    # Login to Cloudflare
    wrangler login
-   
+
    # Set environment variables
    wrangler secret put DATAFORSEO_USERNAME
    wrangler secret put DATAFORSEO_PASSWORD
@@ -154,7 +154,7 @@ The DataForSEO MCP Server can be deployed as a Cloudflare Worker for serverless,
 The worker uses the same environment variables as the standard server:
 
 - `DATAFORSEO_USERNAME`: Your DataForSEO username
-- `DATAFORSEO_PASSWORD`: Your DataForSEO password  
+- `DATAFORSEO_PASSWORD`: Your DataForSEO password
 - `ENABLED_MODULES`: Comma-separated list of modules to enable
 - `DATAFORSEO_FULL_RESPONSE`: Set to "true" for full API responses
 
@@ -198,7 +198,7 @@ After deployment, configure Claude to use your worker:
   }
 }
 ```
-   
+
 ## Available Modules
 
 The following modules are available to be enabled/disabled:
@@ -269,7 +269,7 @@ export class YourTool extends BaseTool {
       // Required parameters
       keyword: z.string().describe('The keyword to search for'),
       location: z.string().describe('Location in format "City,Region,Country" or just "Country"'),
-      
+
       // Optional parameters
       fields: z.array(z.string()).optional().describe('Specific fields to return in the response. If not specified, all fields will be returned'),
       language: z.string().optional().describe('Language code (e.g., "en")'),
