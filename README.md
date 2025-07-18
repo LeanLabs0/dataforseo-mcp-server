@@ -22,8 +22,8 @@ Model Context Protocol (MCP) server implementation for DataForSEO, enabling AI a
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/dataforseo/mcp-server-typescript
-cd mcp-server-typescript
+git clone https://github.com/LeanLabs0/dataforseo-mcp-server
+cd dataforseo-mcp-server
 ```
 
 2. Install dependencies:
